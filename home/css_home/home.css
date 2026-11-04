@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --warna-utama: #cfeef4;
+  --warna-tombol: #bfe3ea;
+  --warna-teks: #000000;
+}
+
+body {
+  font-family: "Inter", Arial, sans-serif;
+  background-color: #ffffff;
+  color: var(--warna-teks);
+  min-height: 100vh;
+  padding: 24px;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto 40px;
+  background-color: var(--warna-utama);
+  border-radius: 18px;
+  padding: 22px 30px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: var(--warna-teks);
+  font-size: 14px;
+  transition: opacity 0.2s;
+}
+
+.navbar a:hover {
+  opacity: 0.6;
+}
+
+/* ===== Daftar kartu ===== */
+.team {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.card-wrapper {
+  width: 107px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.card {
+  width: 100%;
+  background-color: var(--warna-utama);
+  border-radius: 12px;
+  padding: 10px 10px 14px;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: 82px;
+  object-fit: cover;
+  border-radius: 14px;
+  display: block;
+  margin-bottom: 12px;
+  background-color: #9ccfd8; /* placeholder jika foto belum ada */
+}
+
+.card h3 {
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.btn-more {
+  display: inline-block;
+  background-color: var(--warna-tombol);
+  color: #3d5a60;
+  font-size: 8px;
+  text-decoration: none;
+  padding: 4px 10px;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+.btn-more:hover {
+  background-color: #a6d6df;
+}
+
+@media (max-width: 640px) {
+  .navbar ul {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .card-wrapper {
+    width: 140px;
+  }
+
+  .card img {
+    height: 110px;
+  }
+
+  .card h3,
+  .card p {
+    font-size: 13px;
+  }
+
+  .btn-more {
+    font-size: 10px;
+  }
+}
