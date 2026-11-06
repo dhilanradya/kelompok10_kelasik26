@@ -1,4 +1,4 @@
-/* Reset dasar */
+/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
@@ -6,130 +6,281 @@
 }
 
 :root {
-  --warna-utama: #cfeef4;
-  --warna-tombol: #bfe3ea;
-  --warna-teks: #000000;
+  --navy: #1b2a4a;
+  --blue: #1f5fbf;
+  --blue-dark: #1a4a8a;
+  --text-dark: #111111;
 }
 
 body {
-  font-family: "Inter", Arial, sans-serif;
-  background-color: #ffffff;
-  color: var(--warna-teks);
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
   min-height: 100vh;
-  padding: 24px;
-}
-
-/* ===== Navbar ===== */
-.navbar {
-  width: 100%;
-  max-width: 700px;
-  margin: 0 auto 40px;
-  background-color: var(--warna-utama);
-  border-radius: 18px;
-  padding: 22px 30px;
-}
-
-.navbar ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin-top: 20px;
-}
-
-.navbar a {
-  text-decoration: none;
-  color: var(--warna-teks);
-  font-size: 14px;
-  transition: opacity 0.2s;
-}
-
-.navbar a:hover {
-  opacity: 0.6;
-}
-
-/* ===== Daftar kartu ===== */
-.team {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 24px;
-}
-
-.card-wrapper {
-  width: 107px;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  gap: 8px;
+  background: #ffffff;
+  color: var(--text-dark);
 }
 
-.card {
-  width: 100%;
-  background-color: var(--warna-utama);
-  border-radius: 5px;
-  padding: 10px 10px 14px;
-  text-align: center;
-}
-
-.card img {
-  width: 100%;
-  height: 82px;
-  object-fit: cover;
-  border-radius: 5px;
-  display: block;
-  margin-bottom: 12px;
-  background-color: #9ccfd8; /* placeholder jika foto belum ada */
-}
-
-.card h3 {
-  font-size: 11px;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.card p {
-  font-size: 11px;
-  font-weight: 400;
-}
-
-/* ===== Tombol View More ===== */
-.btn-more {
-  display: inline-block;
-  background-color: var(--warna-tombol);
-  color: #3d5a60;
-  font-size: 8px;
+a {
   text-decoration: none;
-  padding: 4px 10px;
-  border-radius: 6px;
-  transition: background-color 0.2s;
+  color: inherit;
 }
 
-.btn-more:hover {
-  background-color: #a6d6df;
+/* ===== NAVBAR ===== */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 60px;
+  background: #ffffff;
+  position: relative;
+  z-index: 5;
 }
 
-/* ===== Responsif ===== */
-@media (max-width: 640px) {
-  .navbar ul {
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--navy);
+}
+
+.icon-people {
+  width: 32px;
+  height: 24px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+}
+
+.nav-links a {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--navy);
+  padding-bottom: 6px;
+  border-bottom: 2px solid transparent;
+  transition: 0.2s;
+}
+
+.nav-links a.active {
+  font-weight: 700;
+  border-bottom-color: var(--navy);
+}
+
+.nav-links a:hover {
+  border-bottom-color: var(--navy);
+}
+
+/* ===== HERO ===== */
+.hero {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 60px 40px 80px;
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #ffffff 35%,
+    #e6eefc 60%,
+    #a9c1ee 85%,
+    #6f93d8 100%
+  );
+}
+
+.hero-text {
+  max-width: 560px;
+}
+
+.hero-text h1 {
+  font-size: 56px;
+  line-height: 1.1;
+  font-weight: 800;
+  margin-bottom: 28px;
+}
+
+.hero-text h1 span {
+  display: block;
+}
+
+.hero-text h1 .black {
+  color: var(--text-dark);
+}
+
+.hero-text h1 .blue {
+  color: var(--blue);
+}
+
+.hero-text p {
+  font-size: 19px;
+  line-height: 1.5;
+  font-weight: 600;
+  color: var(--blue-dark);
+  margin-bottom: 34px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--blue-dark);
+  color: #ffffff;
+  padding: 16px 30px;
+  border-radius: 40px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.25s;
+}
+
+.btn svg {
+  width: 22px;
+  height: 22px;
+}
+
+.btn:hover {
+  background: #123664;
+  transform: translateY(-2px);
+}
+
+/* ----- Gambar laptop ----- */
+.hero-image {
+  flex: 0 0 auto;
+  width: 520px;      /* ubah angka ini untuk memperbesar/memperkecil gambar */
+  max-width: 45%;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  mix-blend-mode: multiply;  /* hapus baris ini jika gambar sudah transparan */
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: var(--navy);
+  color: #ffffff;
+  padding: 28px 60px 14px;
+}
+
+.footer-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.brand-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-brand h3 {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.footer-brand small {
+  font-size: 11px;
+  color: #b9c3d8;
+}
+
+.footer h4 {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  display: block;
+  font-size: 11px;
+  color: #c4cde0;
+  margin-bottom: 4px;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+.footer-contact p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: #c4cde0;
+  margin-bottom: 6px;
+}
+
+.footer-contact svg {
+  width: 14px;
+  height: 14px;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.footer-social {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.footer-social a {
+  color: #ffffff;
+  display: flex;
+  transition: 0.2s;
+}
+
+.footer-social a:hover {
+  color: #7fa6ee;
+}
+
+.footer-social svg {
+  width: 22px;
+  height: 22px;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 10px;
+  color: #aab4ca;
+  margin-top: 10px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .navbar {
+    padding: 16px 24px;
+  }
+
+  .nav-links {
     gap: 20px;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: left;
+    padding: 40px 24px;
+    gap: 30px;
+  }
+
+  .hero-text h1 {
+    font-size: 40px;
+  }
+
+  .hero-image {
+    width: 90%;
+    max-width: 90%;
+  }
+
+  .footer {
+    padding: 28px 24px 14px;
+  }
+
+  .footer-top {
     flex-wrap: wrap;
-  }
-
-  .card-wrapper {
-    width: 140px;
-  }
-
-  .card img {
-    height: 110px;
-  }
-
-  .card h3,
-  .card p {
-    font-size: 13px;
-  }
-
-  .btn-more {
-    font-size: 10px;
   }
 }
